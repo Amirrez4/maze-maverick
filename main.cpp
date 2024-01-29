@@ -355,7 +355,7 @@ void CreateMapHard()
     }
 
     system("cls");
-    monitor(row, col, map, ans);
+    monitor(row, col, ans, map);
 
     PlateDeleter(row, map);
     PlateDeleter(row, ans);
@@ -817,7 +817,6 @@ void PathMakerHard(int row, int col, int len, int min, int max, int **&map)
                                 map[x + i_pos][y + j_pos] = tempmap[x][y];
                             }
                         }
-                        PlateDeleter(row, tempmap);
                         return;
                     }
                 }
@@ -882,7 +881,6 @@ void PathMakerHard(int row, int col, int len, int min, int max, int **&map)
                                 map[x + i_pos][y + j_pos] = tempmap[x][y];
                             }
                         }
-                        PlateDeleter(row, tempmap);
                         return;
                     }
                 }
@@ -982,7 +980,6 @@ void PathMakerHard(int row, int col, int len, int min, int max, int **&map)
                         map[x + i_pos][y + j_pos] = tempmap[x][y];
                     }
                 }
-                PlateDeleter(row, tempmap);
                 return;
             }
             // Going backward on odd rows
@@ -1017,7 +1014,6 @@ void PathMakerHard(int row, int col, int len, int min, int max, int **&map)
                                     map[x + i_pos][y + j_pos] = tempmap[x][y];
                                 }
                             }
-                            // PlateDeleter(row, tempmap);
                             return;
                         }
                     }
